@@ -25,3 +25,4 @@ flutter:
   assets:
     - 'assets/images/profile/'
     - 'assets/images/post/'
+    - 'assets/images/story/'

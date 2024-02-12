@@ -7,6 +7,7 @@ abstract class Routes {
   static const SNAP_GRAM = _Paths.SNAP_GRAM;
   static const NOTIFICATION = _Paths.NOTIFICATION;
   static const EDIT_PROFILE = _Paths.EDIT_PROFILE;
+  static const HIGHLIGHT_STORY = _Paths.HIGHLIGHT_STORY;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const SNAP_GRAM = '/snap-gram';
   static const NOTIFICATION = '/notification';
   static const EDIT_PROFILE = '/edit-profile';
+  static const HIGHLIGHT_STORY = '/highlight-story';
 }

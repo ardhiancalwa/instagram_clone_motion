@@ -1,13 +1,13 @@
-import 'package:deep_dive_get_cli/app/shared/widgets/image_story.dart';
 import 'package:deep_dive_get_cli/app/shared/widgets/user_info.dart';
 import 'package:deep_dive_get_cli/app/shared/widgets/user_profile_data.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:story_view/story_view.dart';
 
 import '../controllers/edit_profile_controller.dart';
-import '../../snap_gram/controllers/snap_gram_controller.dart';
+import '../../../data/model/story_model.dart';
+
+import '../../../shared/widgets/highlight_story.dart';
 
 class EditProfileView extends GetView<EditProfileController> {
   const EditProfileView({Key? key}) : super(key: key);
@@ -61,6 +61,30 @@ class EditProfileView extends GetView<EditProfileController> {
           children: [
             UserProfile(userProfile: controller.userProfile),
             UserInfo(userProfile: controller.userProfile),
+            Container(
+              margin: const EdgeInsets.symmetric(
+                horizontal: 16,
+              ),
+              height: 97.75,
+              child: ListView.builder(
+                itemCount: controller.highlightStoryModel.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  StoryModel data = controller.highlightStoryModel[index];
+                  return Padding(
+                    padding: const EdgeInsets.only(
+                      right: 12,
+                    ),
+                    child: HighlightStory(
+                      highlightStory: data,
+                      onTap: () {
+                        controller.toStoryPageView(data.storyItems);
+                      },
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),

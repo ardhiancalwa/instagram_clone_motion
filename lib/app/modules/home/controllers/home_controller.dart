@@ -11,7 +11,7 @@ class HomeController extends GetxController {
   final storyController = StoryController();
   var isDark = false.obs;
   void changeTheme() => isDark.value = !isDark.value;
-  
+
   PostModel postModel = PostModel(
     namaAkun: 'ardhncalwaa',
     description:
@@ -21,6 +21,7 @@ class HomeController extends GetxController {
     isLike: false,
     postingGambar: 'foto_profile',
     isSponsor: false,
+    isBookmark: false,
   );
 
   List<StoryModel> storyModel = [];
@@ -146,6 +147,11 @@ class HomeController extends GetxController {
     } else {
       postModel.jumlahLike--;
     }
+    update();
+  }
+
+  void changeIconBookmark() {
+    postModel.isBookmark = !postModel.isBookmark;
     update();
   }
 

@@ -4,15 +4,17 @@ class PostModel {
   bool isSponsor;
   String postingGambar;
   bool isLike;
+  bool isBookmark;
   int jumlahLike;
   String description;
   PostModel({
     required this.fotoProfile,
     required this.namaAkun,
-    this.isSponsor = false,
     required this.postingGambar,
-    this.isLike = false,
     required this.jumlahLike,
     required this.description,
+    this.isSponsor = false,
+    this.isLike = false,
+    this.isBookmark = false,
   });
 }

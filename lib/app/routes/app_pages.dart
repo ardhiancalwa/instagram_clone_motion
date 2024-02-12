@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/edit_profile/bindings/edit_profile_binding.dart';
 import '../modules/edit_profile/views/edit_profile_view.dart';
+import '../modules/highlight_story/bindings/highlight_story_binding.dart';
+import '../modules/highlight_story/views/highlight_story_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/notification/bindings/notification_binding.dart';
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.EDIT_PROFILE,
       page: () => const EditProfileView(),
       binding: EditProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.HIGHLIGHT_STORY,
+      page: () => const HighlightStoryView(),
+      binding: HighlightStoryBinding(),
     ),
   ];
 }

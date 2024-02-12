@@ -1,10 +1,13 @@
 import 'package:deep_dive_get_cli/app/data/model/edit_profile_model.dart';
-import 'package:deep_dive_get_cli/app/routes/app_pages.dart';
+import 'package:deep_dive_get_cli/app/data/model/story_model.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:story_view/controller/story_controller.dart';
-import 'package:story_view/widgets/story_view.dart';
+import 'package:story_view/story_view.dart';
+
+import '../../../routes/app_pages.dart';
 
 class EditProfileController extends GetxController {
+  final highlightStoryController = StoryController();
   EditProfileModel userProfile = EditProfileModel(
     imageProfile: 'foto_profile',
     numOfPosts: '1,234',
@@ -17,16 +20,154 @@ class EditProfileController extends GetxController {
     hyperlink: 'Link goes here',
     hashtag: '#hastag',
   );
-
-  List<EditProfileModel> storyProfile = [];
-
-  get storyController => null;
-
-  get listOfStory => null;
-
-  get snapGramComplete => null;
-
   void toHomeView() {
     Get.back();
+  }
+
+  List<StoryModel> highlightStoryModel = [];
+
+  @override
+  void onInit() {
+    loadHighlightStoryModel();
+    super.onInit();
+  }
+
+  void loadHighlightStoryModel() {
+    highlightStoryModel = [
+      StoryModel(
+        image: 'japan',
+        namaAkun: 'Japan',
+        storyItems: [
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+        ],
+      ),
+      StoryModel(
+        image: 'germany',
+        namaAkun: 'Germany',
+        storyItems: [
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+        ],
+      ),
+      StoryModel(
+        image: 'swiss',
+        namaAkun: 'Swiss',
+        storyItems: [
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+        ],
+      ),
+      StoryModel(
+        image: 'korea',
+        namaAkun: 'Korea',
+        storyItems: [
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+        ],
+      ),
+      StoryModel(
+        image: 'dubai',
+        namaAkun: 'Dubai',
+        storyItems: [
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+        ],
+      ),
+      StoryModel(
+        image: 'spain',
+        namaAkun: 'Spain',
+        storyItems: [
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+        ],
+      ),
+      StoryModel(
+        image: 'thai',
+        namaAkun: 'Thailand',
+        storyItems: [
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+        ],
+      ),
+      StoryModel(
+        image: 'french',
+        namaAkun: 'French',
+        storyItems: [
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+        ],
+      ),
+      StoryModel(
+        image: 'italy',
+        namaAkun: 'Italy',
+        storyItems: [
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+          StoryItem.text(
+            title: 'lorem ',
+            backgroundColor: Colors.blue,
+          ),
+        ],
+      ),
+    ];
+  }
+
+  void toStoryPageView(
+    List<StoryItem>? highlightStoryItems,
+  ) {
+    Get.toNamed(Routes.HIGHLIGHT_STORY, arguments: {
+      'highlight_story': highlightStoryItems,
+    });
   }
 }

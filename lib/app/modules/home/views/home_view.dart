@@ -86,6 +86,7 @@ class HomeView extends GetView<HomeController> {
               Post(
                 postModel: controller.postModel,
                 onPressed: controller.changeIconLike,
+                onPressed2: controller.changeIconBookmark,
               ),
               const SizedBox(
                 height: 18,

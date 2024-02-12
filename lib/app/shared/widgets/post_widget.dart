@@ -5,10 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 class Post extends StatelessWidget {
   final PostModel postModel;
   final void Function()? onPressed;
+  final void Function()? onPressed2;
   const Post({
     super.key,
     required this.postModel,
     this.onPressed,
+    this.onPressed2,
   });
 
   @override
@@ -115,8 +117,19 @@ class Post extends StatelessWidget {
               ],
             ),
             IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.bookmark_border),
+              onPressed: onPressed2,
+              icon: Icon(
+                postModel.isBookmark ? Icons.bookmark : Icons.bookmark_border,
+                color: postModel.isBookmark
+                    ? (Theme.of(context).brightness == Brightness.light
+                        ? Colors.yellow
+                        : Colors
+                            .yellowAccent) // Set different colors for light and dark modes
+                    : (Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white
+                        : Colors
+                            .black), // Set different colors for light and dark modes
+              ),
             ),
           ],
         ),
