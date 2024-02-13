@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/edit_profile/bindings/edit_profile_binding.dart';
 import '../modules/edit_profile/views/edit_profile_view.dart';
+import '../modules/grid_post/bindings/grid_post_binding.dart';
+import '../modules/grid_post/views/grid_post_view.dart';
 import '../modules/highlight_story/bindings/highlight_story_binding.dart';
 import '../modules/highlight_story/views/highlight_story_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.HIGHLIGHT_STORY,
       page: () => const HighlightStoryView(),
       binding: HighlightStoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.GRID_POST,
+      page: () => GridPostView(),
+      binding: GridPostBinding(),
     ),
   ];
 }

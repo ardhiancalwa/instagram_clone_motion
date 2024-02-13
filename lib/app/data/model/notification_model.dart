@@ -10,6 +10,6 @@ class NotificationModel {
     required this.description,
     required this.time,
     required this.image,
-    this.isFollow = false,
+    this.isFollow = true,
   });
 }

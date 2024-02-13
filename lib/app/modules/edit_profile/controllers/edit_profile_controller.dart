@@ -1,5 +1,6 @@
 import 'package:deep_dive_get_cli/app/data/model/edit_profile_model.dart';
 import 'package:deep_dive_get_cli/app/data/model/story_model.dart';
+import 'package:deep_dive_get_cli/app/modules/grid_post/controllers/grid_post_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:story_view/story_view.dart';
@@ -8,6 +9,13 @@ import '../../../routes/app_pages.dart';
 
 class EditProfileController extends GetxController {
   final highlightStoryController = StoryController();
+
+  @override
+  void onInit() {
+    loadHighlightStoryModel();
+    super.onInit();
+  }
+
   EditProfileModel userProfile = EditProfileModel(
     imageProfile: 'foto_profile',
     numOfPosts: '1,234',
@@ -20,17 +28,12 @@ class EditProfileController extends GetxController {
     hyperlink: 'Link goes here',
     hashtag: '#hastag',
   );
+
   void toHomeView() {
     Get.back();
   }
 
   List<StoryModel> highlightStoryModel = [];
-
-  @override
-  void onInit() {
-    loadHighlightStoryModel();
-    super.onInit();
-  }
 
   void loadHighlightStoryModel() {
     highlightStoryModel = [
@@ -39,11 +42,11 @@ class EditProfileController extends GetxController {
         namaAkun: 'Japan',
         storyItems: [
           StoryItem.text(
-            title: 'lorem ',
+            title: 'Japan',
             backgroundColor: Colors.blue,
           ),
           StoryItem.text(
-            title: 'lorem ',
+            title: 'Tokyo',
             backgroundColor: Colors.blue,
           ),
         ],
@@ -53,11 +56,11 @@ class EditProfileController extends GetxController {
         namaAkun: 'Germany',
         storyItems: [
           StoryItem.text(
-            title: 'lorem ',
+            title: 'Germany',
             backgroundColor: Colors.blue,
           ),
           StoryItem.text(
-            title: 'lorem ',
+            title: 'Berlin',
             backgroundColor: Colors.blue,
           ),
         ],
@@ -67,11 +70,11 @@ class EditProfileController extends GetxController {
         namaAkun: 'Swiss',
         storyItems: [
           StoryItem.text(
-            title: 'lorem ',
+            title: 'Swiss',
             backgroundColor: Colors.blue,
           ),
           StoryItem.text(
-            title: 'lorem ',
+            title: 'Zurich',
             backgroundColor: Colors.blue,
           ),
         ],
@@ -81,11 +84,11 @@ class EditProfileController extends GetxController {
         namaAkun: 'Korea',
         storyItems: [
           StoryItem.text(
-            title: 'lorem ',
+            title: 'Korea',
             backgroundColor: Colors.blue,
           ),
           StoryItem.text(
-            title: 'lorem ',
+            title: 'Seoul',
             backgroundColor: Colors.blue,
           ),
         ],
@@ -95,67 +98,11 @@ class EditProfileController extends GetxController {
         namaAkun: 'Dubai',
         storyItems: [
           StoryItem.text(
-            title: 'lorem ',
+            title: 'Dubai',
             backgroundColor: Colors.blue,
           ),
           StoryItem.text(
-            title: 'lorem ',
-            backgroundColor: Colors.blue,
-          ),
-        ],
-      ),
-      StoryModel(
-        image: 'spain',
-        namaAkun: 'Spain',
-        storyItems: [
-          StoryItem.text(
-            title: 'lorem ',
-            backgroundColor: Colors.blue,
-          ),
-          StoryItem.text(
-            title: 'lorem ',
-            backgroundColor: Colors.blue,
-          ),
-        ],
-      ),
-      StoryModel(
-        image: 'thai',
-        namaAkun: 'Thailand',
-        storyItems: [
-          StoryItem.text(
-            title: 'lorem ',
-            backgroundColor: Colors.blue,
-          ),
-          StoryItem.text(
-            title: 'lorem ',
-            backgroundColor: Colors.blue,
-          ),
-        ],
-      ),
-      StoryModel(
-        image: 'french',
-        namaAkun: 'French',
-        storyItems: [
-          StoryItem.text(
-            title: 'lorem ',
-            backgroundColor: Colors.blue,
-          ),
-          StoryItem.text(
-            title: 'lorem ',
-            backgroundColor: Colors.blue,
-          ),
-        ],
-      ),
-      StoryModel(
-        image: 'italy',
-        namaAkun: 'Italy',
-        storyItems: [
-          StoryItem.text(
-            title: 'lorem ',
-            backgroundColor: Colors.blue,
-          ),
-          StoryItem.text(
-            title: 'lorem ',
+            title: 'Dubaiii',
             backgroundColor: Colors.blue,
           ),
         ],
