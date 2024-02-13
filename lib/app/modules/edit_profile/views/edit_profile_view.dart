@@ -12,7 +12,7 @@ import '../../../shared/widgets/highlight_story.dart';
 
 class EditProfileView extends GetView<EditProfileController> {
   const EditProfileView({Key? key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,15 +72,15 @@ class EditProfileView extends GetView<EditProfileController> {
                 itemCount: controller.highlightStoryModel.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  StoryModel data = controller.highlightStoryModel[index];
+                  StoryModel data2 = controller.highlightStoryModel[index];
                   return Padding(
                     padding: const EdgeInsets.only(
                       right: 12,
                     ),
                     child: HighlightStory(
-                      highlightStory: data,
+                      highlightStory: data2,
                       onTap: () {
-                        controller.toStoryPageView(data.storyItems);
+                        controller.toStoryPageView(data2.storyItems);
                       },
                     ),
                   );

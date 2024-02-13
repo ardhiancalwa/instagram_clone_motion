@@ -1,18 +1,19 @@
 import 'package:deep_dive_get_cli/app/data/model/edit_profile_model.dart';
 import 'package:deep_dive_get_cli/app/data/model/story_model.dart';
-import 'package:deep_dive_get_cli/app/modules/grid_post/controllers/grid_post_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:story_view/story_view.dart';
 
 import '../../../routes/app_pages.dart';
 
-class EditProfileController extends GetxController {
+class EditProfileController extends GetxController
+    with GetTickerProviderStateMixin {
   final highlightStoryController = StoryController();
 
   @override
   void onInit() {
     loadHighlightStoryModel();
+
     super.onInit();
   }
 
