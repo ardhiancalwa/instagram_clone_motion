@@ -29,20 +29,42 @@ class GridPostController extends GetxController
     ),
   ];
 
-  final List<Map<String, String>> postMap = List.generate(15, (index) {
-    return {
-      'images': '${faker.image.image(
-        random: true,
-      )}'
-    };
-  });
+  final List<Map<String, String>> postMap = [
+    {
+      'image': 'assets/images/post/steve_halama.png',
+    },
+    {
+      'image': 'assets/images/post/raul_angel.png',
+    },
+    {
+      'image': 'assets/images/post/morgan_aragon.png',
+    },
+    {
+      'image': 'assets/images/post/josen_alejandro.png',
+    },
+    {
+      'image': 'assets/images/post/jesus_santos.png',
+    },
+    {
+      'image': 'assets/images/post/grace_ho.png',
+    },
+    {
+      'image': 'assets/images/post/shuttergames.png',
+    },
+    {
+      'image': 'assets/images/post/everton_vila.png',
+    },
+    {
+      'image': 'assets/images/post/eric_waber.png',
+    },
+  ];
   final List<Map<String, String>> reelsMap = List.generate(15, (index) {
     return {
-      'images': '${faker.image.image(
+      'images': faker.image.image(
         random: true,
         width: 130,
         height: 200,
-      )}'
+      )
     };
   });
 }

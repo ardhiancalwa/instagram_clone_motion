@@ -3,6 +3,7 @@ class EditProfileModel {
   String numOfFollowers;
   String numOfFollowing;
   String numOfPosts;
+  String nameAccount;
   String username;
   String category;
   String description;
@@ -14,6 +15,7 @@ class EditProfileModel {
     required this.numOfFollowers,
     required this.numOfFollowing,
     required this.numOfPosts,
+    required this.nameAccount,
     required this.username,
     required this.category,
     required this.description,

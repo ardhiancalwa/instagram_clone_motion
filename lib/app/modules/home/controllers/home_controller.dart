@@ -1,5 +1,6 @@
 import 'package:deep_dive_get_cli/app/data/model/post_model.dart';
 import 'package:deep_dive_get_cli/app/data/model/story_model.dart';
+import 'package:deep_dive_get_cli/app/modules/message/controllers/message_controller.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,18 +10,19 @@ import '../../../routes/app_pages.dart';
 
 class HomeController extends GetxController {
   final storyController = StoryController();
+  final messageController = MessageController();
   var isDark = false.obs;
   void changeTheme() => isDark.value = !isDark.value;
 
   PostModel postModel = PostModel(
-    namaAkun: 'ardhncalwaa',
+    namaAkun: 'raplii._',
     description:
         'Username Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor lorem ipsum dolor sit amet, consectetur adip',
-    fotoProfile: 'foto_profile',
+    fotoProfile: 'rapli_profile',
     jumlahLike: 1,
     isLike: false,
-    postingGambar: 'foto_profile',
-    isSponsor: false,
+    postingGambar: 'swiss',
+    isSponsor: true,
     isBookmark: false,
   );
 
@@ -169,5 +171,9 @@ class HomeController extends GetxController {
 
   void toEditProfileView() {
     Get.toNamed(Routes.EDIT_PROFILE);
+  }
+
+  void toMessageView() {
+    Get.toNamed(Routes.MESSAGE);
   }
 }

@@ -8,6 +8,8 @@ import '../modules/highlight_story/bindings/highlight_story_binding.dart';
 import '../modules/highlight_story/views/highlight_story_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/message/bindings/message_binding.dart';
+import '../modules/message/views/message_view.dart';
 import '../modules/notification/bindings/notification_binding.dart';
 import '../modules/notification/views/notification_view.dart';
 import '../modules/snap_gram/bindings/snap_gram_binding.dart';
@@ -50,6 +52,11 @@ class AppPages {
       name: _Paths.GRID_POST,
       page: () => GridPostView(),
       binding: GridPostBinding(),
+    ),
+    GetPage(
+      name: _Paths.MESSAGE,
+      page: () => const MessageView(),
+      binding: MessageBinding(),
     ),
   ];
 }

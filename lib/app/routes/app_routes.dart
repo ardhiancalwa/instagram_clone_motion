@@ -9,6 +9,7 @@ abstract class Routes {
   static const EDIT_PROFILE = _Paths.EDIT_PROFILE;
   static const HIGHLIGHT_STORY = _Paths.HIGHLIGHT_STORY;
   static const GRID_POST = _Paths.GRID_POST;
+  static const MESSAGE = _Paths.MESSAGE;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const EDIT_PROFILE = '/edit-profile';
   static const HIGHLIGHT_STORY = '/highlight-story';
   static const GRID_POST = '/grid-post';
+  static const MESSAGE = '/message';
 }

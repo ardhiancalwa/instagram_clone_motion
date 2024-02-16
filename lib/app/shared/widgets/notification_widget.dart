@@ -10,48 +10,61 @@ class MyNotification extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          GestureDetector(
-            onTap: () {},
-            child: CircleAvatar(
-              backgroundImage: AssetImage(
-                  'assets/images/profile/${notificationModel.image}.jpg'),
-            ),
+    return ListTile(
+      leading: GestureDetector(
+        onTap: () {},
+        child: CircleAvatar(
+          backgroundImage: AssetImage(
+              'assets/images/profile/${notificationModel.image}.jpg'),
+        ),
+      ),
+      title: Text(
+        notificationModel.nameAccount,
+        style: const TextStyle(fontWeight: FontWeight.bold),
+      ),
+      subtitle: RichText(
+        text: TextSpan(
+          text: '${notificationModel.description}  ',
+          style: TextStyle(
+            fontWeight: FontWeight.normal,
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.white
+                : Colors.black,
           ),
-          Flexible(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: RichText(
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                text: TextSpan(
-                  style: DefaultTextStyle.of(context).style,
-                  children: [
-                    TextSpan(
-                      text: '${notificationModel.nameAccount} ',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+          children: [
+            TextSpan(
+              text: notificationModel.time,
+              style: const TextStyle(
+                fontWeight: FontWeight.normal,
+                color: Colors.grey,
+              ),
+            )
+          ],
+        ),
+      ),
+      trailing: notificationModel.isFollow
+          ? SizedBox(
+              width: 100,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateColor.resolveWith((states) => Colors.blue),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
                     ),
-                    TextSpan(
-                      text: notificationModel.description,
-                      style: TextStyle(fontWeight: FontWeight.normal),
-                    ),
-                  ],
+                  ),
+                ),
+                onPressed: () {},
+                child: const Text(
+                  "Follow",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
-            ),
-          ),
-          notificationModel.isFollow
-              ? ElevatedButton(
-                  onPressed: () {},
-                  child: Text("Follow"),
-                )
-              : Container(),
-        ],
-      ),
+            )
+          : const SizedBox(),
     );
   }
 }

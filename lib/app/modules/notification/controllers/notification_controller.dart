@@ -12,17 +12,56 @@ class NotificationController extends GetxController {
   void loadNotificationModel() {
     notificationModel = [
       NotificationModel(
-        nameAccount: 'nameAccount',
+        nameAccount: 'rapliii121',
         description: 'lorem ipsum dolor sit amet, consectetur adipiscing',
-        time: '4h',
-        image: 'foto_profile',
+        time: '1h',
+        image: 'rapli_profile',
         isFollow: false,
       ),
       NotificationModel(
-        nameAccount: 'nameAccount',
+        nameAccount: 'azzlhrr_',
         description: 'lorem ipsum dolor sit amet, consectetur adipiscing',
-        time: '4h',
-        image: 'foto_profile',
+        time: '8h',
+        image: 'azziz_profile',
+        isFollow: false,
+      ),
+      NotificationModel(
+        nameAccount: 'hmdkptrr',
+        description:
+            'lorem ipsum dolor sit amet, consectetur adipiscing lorem ipsum dolor sit amet',
+        time: '2d',
+        image: 'dika_profile',
+        isFollow: false,
+      ),
+      NotificationModel(
+        nameAccount: 'fazari_razka',
+        description: 'lorem ipsum dolor sit amet, consectetur adipiscing',
+        time: '2d',
+        image: 'blank_profile',
+        isFollow: true,
+      ),
+      NotificationModel(
+        nameAccount: 'falahrazhibr',
+        description:
+            'lorem ipsum dolor sit amet, consectetur adipiscing lorem ipsum dolor sit amet',
+        time: '3d',
+        image: 'falah_profile',
+        isFollow: false,
+      ),
+      NotificationModel(
+        nameAccount: 'billy_0305',
+        description:
+            'lorem ipsum dolor sit amet, consectetur adipiscing lorem ipsum dolor sit amet',
+        time: '6d',
+        image: 'blank_profile',
+        isFollow: true,
+      ),
+      NotificationModel(
+        nameAccount: '_hm.n.tr_',
+        description:
+            'lorem ipsum dolor sit amet, consectetur adipiscing lorem ipsum dolor sit amet',
+        time: '6d',
+        image: 'irham_profile',
         isFollow: false,
       ),
     ];

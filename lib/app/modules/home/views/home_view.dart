@@ -20,7 +20,7 @@ class HomeView extends GetView<HomeController> {
               Text(
                 'Instagram',
                 style: GoogleFonts.oleoScript(
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: 25,
                   ),
@@ -28,7 +28,7 @@ class HomeView extends GetView<HomeController> {
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.arrow_drop_down),
+                icon: const Icon(Icons.arrow_drop_down),
               ),
             ],
           ),
@@ -37,15 +37,15 @@ class HomeView extends GetView<HomeController> {
               onPressed: () {
                 controller.toNotificationPageView();
               },
-              icon: Icon(Icons.favorite_border_outlined),
+              icon: const Icon(Icons.favorite_border_outlined),
             ),
             IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.message_outlined),
+              onPressed: () => controller.toMessageView(),
+              icon: const Icon(Icons.message_outlined),
             ),
             IconButton(
               onPressed: () => controller.changeTheme(),
-              icon: Icon(Icons.dark_mode_outlined),
+              icon: const Icon(Icons.dark_mode_outlined),
             ),
           ],
         ),
@@ -102,35 +102,35 @@ class HomeView extends GetView<HomeController> {
             children: [
               IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.home_outlined,
                   size: 24,
                 ),
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.search,
                   size: 24,
                 ),
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.video_collection_outlined,
                   size: 24,
                 ),
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.shopping_bag_outlined,
                   size: 24,
                 ),
               ),
               GestureDetector(
                 onTap: () => controller.toEditProfileView(),
-                child: CircleAvatar(
+                child: const CircleAvatar(
                   radius: 12,
                   backgroundImage:
                       AssetImage("assets/images/profile/foto_profile.jpg"),

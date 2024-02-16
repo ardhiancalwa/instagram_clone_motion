@@ -22,7 +22,8 @@ class EditProfileController extends GetxController
     numOfPosts: '1,234',
     numOfFollowers: '5,678',
     numOfFollowing: '9,012',
-    username: 'Username',
+    nameAccount: 'ardhncalwaa',
+    username: 'calwa',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
     category: 'Category/Genre text',

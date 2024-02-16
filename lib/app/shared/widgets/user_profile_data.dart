@@ -12,7 +12,7 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
         height: 90,
         child: Row(
@@ -30,14 +30,14 @@ class UserProfile extends StatelessWidget {
                   children: [
                     Text(
                       userProfile.numOfPosts,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text('Post'),
+                    const Text('Post'),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 24,
                 ),
                 Column(
@@ -45,14 +45,14 @@ class UserProfile extends StatelessWidget {
                   children: [
                     Text(
                       userProfile.numOfFollowers,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text('Followers'),
+                    const Text('Followers'),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 24,
                 ),
                 Column(
@@ -60,11 +60,11 @@ class UserProfile extends StatelessWidget {
                   children: [
                     Text(
                       userProfile.numOfFollowing,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text('Following'),
+                    const Text('Following'),
                   ],
                 ),
               ],

@@ -32,7 +32,7 @@ class Post extends StatelessWidget {
                   child: Image.asset(
                     postModel.fotoProfile.isEmpty
                         ? ""
-                        : 'assets/images/profile/${postModel.postingGambar}.jpg',
+                        : 'assets/images/profile/${postModel.fotoProfile}.jpg',
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -64,7 +64,7 @@ class Post extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.more_horiz),
+                icon: const Icon(Icons.more_horiz),
               ),
             ],
           ),
@@ -73,13 +73,50 @@ class Post extends StatelessWidget {
           height: 8,
         ),
         Image.asset(
-          'assets/images/profile/${postModel.postingGambar}.jpg',
+          'assets/images/story/${postModel.postingGambar}.jpg',
+          fit: BoxFit.cover,
           width: double.infinity,
           height: 390,
         ),
-        const SizedBox(
-          height: 9.25,
-        ),
+        postModel.isSponsor
+            ? const SizedBox()
+            : const SizedBox(
+                height: 9.75,
+              ),
+        postModel.isSponsor
+            ? Container(
+                color: Colors.blue,
+                width: double.infinity,
+                height: 40,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 5,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "CTA Copy Here",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.white,
+                          size: 15,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            : const SizedBox(),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -104,13 +141,13 @@ class Post extends StatelessWidget {
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.comment,
                   ),
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.share,
                   ),
                 )
@@ -149,13 +186,13 @@ class Post extends StatelessWidget {
               children: [
                 TextSpan(
                   text: '${postModel.namaAkun} ',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 TextSpan(
                   text: postModel.description,
-                  style: TextStyle(fontWeight: FontWeight.normal),
+                  style: const TextStyle(fontWeight: FontWeight.normal),
                 ),
-                TextSpan(
+                const TextSpan(
                   text: 'more',
                   style: TextStyle(
                     color: Colors.grey,
@@ -165,8 +202,8 @@ class Post extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(
+        const Padding(
+          padding: EdgeInsets.symmetric(
             horizontal: 16.0,
           ),
           child: Text(

@@ -13,7 +13,7 @@ class NotificationView extends GetView<NotificationController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Notification',
+          'Notifications',
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),
@@ -21,21 +21,17 @@ class NotificationView extends GetView<NotificationController> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(
-              height: 10,
-            ),
-            Container(
               height: 1000,
               child: ListView.builder(
+                shrinkWrap: true,
                 itemCount: controller.notificationModel.length,
                 scrollDirection: Axis.vertical,
                 itemBuilder: (context, index) {
                   NotificationModel data = controller.notificationModel[index];
-                  return Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: MyNotification(notificationModel: data),
-                  );
+                  return MyNotification(notificationModel: data);
                 },
               ),
             )
@@ -50,23 +46,23 @@ class NotificationView extends GetView<NotificationController> {
           children: [
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.home_outlined),
+              icon: const Icon(Icons.home_outlined),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.video_collection_outlined),
+              icon: const Icon(Icons.video_collection_outlined),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.shopping_bag_outlined),
+              icon: const Icon(Icons.shopping_bag_outlined),
             ),
             GestureDetector(
               onTap: () {},
-              child: CircleAvatar(
+              child: const CircleAvatar(
                 backgroundImage:
                     AssetImage("assets/images/profile/foto_profile.jpg"),
               ),

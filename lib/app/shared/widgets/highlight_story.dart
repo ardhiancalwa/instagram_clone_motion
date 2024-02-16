@@ -34,7 +34,7 @@ class HighlightStory extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 4,
             ),
             SizedBox(

@@ -18,20 +18,20 @@ class UserInfo extends StatelessWidget {
         children: [
           Text(
             userProfile.username,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             userProfile.category,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.grey,
             ),
           ),
           Text(userProfile.description),
           Text(
             userProfile.hashtag,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.blue,
             ),
           ),
@@ -40,15 +40,23 @@ class UserInfo extends StatelessWidget {
             style:
                 TextStyle(color: Colors.blue[900], fontWeight: FontWeight.bold),
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           Row(
             children: [
-              Container(
+              SizedBox(
                 height: 50,
                 width: 100,
                 child: FlutterImageStack.widgets(
+                  totalCount: 3,
+                  itemCount: 3,
+                  itemRadius: 100,
+                  itemBorderWidth: 10,
+                  itemBorderColor:
+                      Theme.of(context).brightness == Brightness.light
+                          ? Colors.white
+                          : Colors.black,
                   children: [
                     CircleAvatar(
                       child: Image.asset(
@@ -63,17 +71,9 @@ class UserInfo extends StatelessWidget {
                           Image.asset('assets/images/profile/dika_profile.jpg'),
                     ),
                   ],
-                  totalCount: 3,
-                  itemCount: 3,
-                  itemRadius: 100,
-                  itemBorderWidth: 10,
-                  itemBorderColor:
-                      Theme.of(context).brightness == Brightness.light
-                          ? Colors.white
-                          : Colors.black,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               Flexible(
@@ -87,7 +87,7 @@ class UserInfo extends StatelessWidget {
                           ? Colors.black
                           : Colors.white, // set your desired color here
                     ),
-                    children: [
+                    children: const [
                       TextSpan(
                         text: 'username, username ',
                         style: TextStyle(
@@ -107,7 +107,7 @@ class UserInfo extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           SizedBox(
@@ -140,7 +140,7 @@ class UserInfo extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 6,
                 ),
                 ElevatedButton(

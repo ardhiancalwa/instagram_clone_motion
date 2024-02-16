@@ -21,10 +21,10 @@ class EditProfileView extends GetView<EditProfileController> {
         title: Row(
           children: [
             Text(
-              'Username',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              controller.userProfile.nameAccount,
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               width: 6,
             ),
             Container(
@@ -34,8 +34,8 @@ class EditProfileView extends GetView<EditProfileController> {
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.red,
               ),
-              padding: EdgeInsets.all(2),
-              child: Center(
+              padding: const EdgeInsets.all(2),
+              child: const Center(
                 child: Text(
                   '10+',
                   style: TextStyle(
@@ -50,11 +50,11 @@ class EditProfileView extends GetView<EditProfileController> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.add_box_outlined),
+            icon: const Icon(Icons.add_box_outlined),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
           ),
         ],
       ),
@@ -87,7 +87,7 @@ class EditProfileView extends GetView<EditProfileController> {
                 },
               ),
             ),
-            Container(
+            SizedBox(
               height: 500,
               width: double.infinity,
               child: Expanded(

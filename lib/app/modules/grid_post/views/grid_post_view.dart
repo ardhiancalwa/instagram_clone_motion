@@ -11,33 +11,40 @@ class GridPostView extends GetView<GridPostController> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         bottom: TabBar(
+          overlayColor: MaterialStatePropertyAll(Colors.grey.withOpacity(0.2)),
+          labelColor: Theme.of(context).brightness == Brightness.light
+              ? Colors.black
+              : Colors.white,
+          unselectedLabelColor: Colors.grey,
+          indicatorColor: Theme.of(context).brightness == Brightness.light
+              ? Colors.black
+              : Colors.white,
           controller: _tabx.tabController,
           tabs: _tabx.gridPost,
         ),
       ),
       body: Flexible(
-        flex: 1,
         child: TabBarView(
           controller: _tabx.tabController,
           children: [
             GridView.builder(
               shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 crossAxisSpacing: 2,
                 mainAxisSpacing: 2,
               ),
               itemCount: _tabx.postMap.length,
               itemBuilder: (_, index) {
-                return Image.network(
-                  "${_tabx.postMap.elementAt(index)['images']}",
+                return Image.asset(
+                  "${_tabx.postMap.elementAt(index)['image']}",
                   fit: BoxFit.cover,
                 );
               },
             ),
             GridView.builder(
               shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 crossAxisSpacing: 2,
                 mainAxisSpacing: 2,
@@ -53,15 +60,15 @@ class GridPostView extends GetView<GridPostController> {
             ),
             GridView.builder(
               shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 crossAxisSpacing: 2,
                 mainAxisSpacing: 2,
               ),
               itemCount: _tabx.postMap.length,
               itemBuilder: (_, index) {
-                return Image.network(
-                  "${_tabx.postMap.elementAt(index)['images']}",
+                return Image.asset(
+                  "${_tabx.postMap.elementAt(index)['image']}",
                   fit: BoxFit.cover,
                 );
               },
