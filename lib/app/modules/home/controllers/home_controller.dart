@@ -13,14 +13,14 @@ class HomeController extends GetxController {
   final messageController = MessageController();
 
   PostModel postModel = PostModel(
-    namaAkun: 'raplii._',
+    namaAkun: 'falahrazhibr',
     description:
         'Username Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor lorem ipsum dolor sit amet, consectetur adip',
-    fotoProfile: 'rapli_profile',
+    fotoProfile: 'falah_profile',
     jumlahLike: 1,
     isLike: false,
-    postingGambar: 'swiss',
-    isSponsor: true,
+    postingGambar: 'germany',
+    isSponsor: false,
     isBookmark: false,
   );
 
@@ -177,5 +177,9 @@ class HomeController extends GetxController {
 
   void toHomeView() {
     Get.back();
+  }
+
+  void toProfileNewFollowing() {
+    Get.toNamed(Routes.PROFILE_NEW_FOLLOWING);
   }
 }

@@ -10,6 +10,7 @@ abstract class Routes {
   static const HIGHLIGHT_STORY = _Paths.HIGHLIGHT_STORY;
   static const GRID_POST = _Paths.GRID_POST;
   static const MESSAGE = _Paths.MESSAGE;
+  static const PROFILE_NEW_FOLLOWING = _Paths.PROFILE_NEW_FOLLOWING;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const HIGHLIGHT_STORY = '/highlight-story';
   static const GRID_POST = '/grid-post';
   static const MESSAGE = '/message';
+  static const PROFILE_NEW_FOLLOWING = '/profile-new-following';
 }

@@ -9,6 +9,7 @@ class EditProfileModel {
   String description;
   String hyperlink;
   String hashtag;
+  bool isFollow;
 
   EditProfileModel({
     required this.imageProfile,
@@ -21,5 +22,6 @@ class EditProfileModel {
     required this.description,
     required this.hyperlink,
     required this.hashtag,
+    this.isFollow = false,
   });
 }

@@ -2,6 +2,8 @@ import 'package:deep_dive_get_cli/app/data/model/post_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../modules/home/controllers/home_controller.dart';
+
 class Post extends StatelessWidget {
   final PostModel postModel;
   final void Function()? onPressed;
@@ -15,6 +17,7 @@ class Post extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final HomeController homeController = HomeController();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -22,18 +25,21 @@ class Post extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Row(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(
-                  36,
-                ),
-                child: SizedBox(
-                  width: 36,
-                  height: 36,
-                  child: Image.asset(
-                    postModel.fotoProfile.isEmpty
-                        ? ""
-                        : 'assets/images/profile/${postModel.fotoProfile}.jpg',
-                    fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () => homeController.toProfileNewFollowing(),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(
+                    36,
+                  ),
+                  child: SizedBox(
+                    width: 36,
+                    height: 36,
+                    child: Image.asset(
+                      postModel.fotoProfile.isEmpty
+                          ? ""
+                          : 'assets/images/profile/${postModel.fotoProfile}.jpg',
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
@@ -44,11 +50,14 @@ class Post extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      postModel.namaAkun.isEmpty ? "" : postModel.namaAkun,
-                      style: GoogleFonts.poppins(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
+                    GestureDetector(
+                      onTap: () => homeController.toProfileNewFollowing(),
+                      child: Text(
+                        postModel.namaAkun.isEmpty ? "" : postModel.namaAkun,
+                        style: GoogleFonts.poppins(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     postModel.isSponsor

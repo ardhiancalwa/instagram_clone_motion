@@ -12,6 +12,8 @@ import '../modules/message/bindings/message_binding.dart';
 import '../modules/message/views/message_view.dart';
 import '../modules/notification/bindings/notification_binding.dart';
 import '../modules/notification/views/notification_view.dart';
+import '../modules/profile_new_following/bindings/profile_new_following_binding.dart';
+import '../modules/profile_new_following/views/profile_new_following_view.dart';
 import '../modules/snap_gram/bindings/snap_gram_binding.dart';
 import '../modules/snap_gram/views/snap_gram_view.dart';
 
@@ -57,6 +59,11 @@ class AppPages {
       name: _Paths.MESSAGE,
       page: () => const MessageView(),
       binding: MessageBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE_NEW_FOLLOWING,
+      page: () => ProfileNewFollowingView(),
+      binding: ProfileNewFollowingBinding(),
     ),
   ];
 }

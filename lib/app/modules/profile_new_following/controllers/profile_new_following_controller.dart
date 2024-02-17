@@ -1,38 +1,34 @@
-import 'package:deep_dive_get_cli/app/data/model/edit_profile_model.dart';
-import 'package:deep_dive_get_cli/app/data/model/story_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:story_view/story_view.dart';
 
+import '../../../data/model/edit_profile_model.dart';
+import '../../../data/model/story_model.dart';
 import '../../../routes/app_pages.dart';
 
-class EditProfileController extends GetxController
-    with GetTickerProviderStateMixin {
+class ProfileNewFollowingController extends GetxController {
   final highlightStoryController = StoryController();
-  var isDark = false.obs;
-  void changeTheme() => isDark.value = !isDark.value;
-
-  @override
-  void onInit() {
-    loadHighlightStoryModel();
-
-    super.onInit();
-  }
 
   EditProfileModel userProfile = EditProfileModel(
-    imageProfile: 'foto_profile',
-    numOfPosts: '1,234',
-    numOfFollowers: '5,678',
-    numOfFollowing: '9,012',
-    nameAccount: 'ardhncalwaa',
+    imageProfile: 'falah_profile',
+    numOfPosts: '234',
+    numOfFollowers: '678',
+    numOfFollowing: '12',
+    nameAccount: 'falahrazhibr',
     username: 'calwa',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
     category: 'Category/Genre text',
     hyperlink: 'Link goes here',
     hashtag: '#hastag',
-    isFollow: true,
+    isFollow: false,
   );
+
+  @override
+  void onInit() {
+    super.onInit();
+    loadHighlightStoryModel();
+  }
 
   List<StoryModel> highlightStoryModel = [];
 

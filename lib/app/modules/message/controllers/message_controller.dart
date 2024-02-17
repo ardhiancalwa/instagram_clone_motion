@@ -27,11 +27,26 @@ class MessageController extends GetxController {
         time: '4h',
       ),
       MessageModel(
-          profileImage: 'rapli_profile',
-          username: 'rapliii121',
-          description: '4 new messages',
-          isActive: false,
-          time: '2d'),
+        profileImage: 'rapli_profile',
+        username: 'rapliii121',
+        description: '4 new messages',
+        isActive: false,
+        time: '2d',
+      ),
+      MessageModel(
+        profileImage: 'dika_profile',
+        username: 'mhndkptrr',
+        description: 'Mentioned you in their comment',
+        isActive: false,
+        time: '3w',
+      ),
+      MessageModel(
+        profileImage: 'irham_profile',
+        username: '_hm.n.tr_',
+        description: 'Okayyy',
+        isActive: false,
+        time: '3w',
+      ),
     ];
   }
 }
