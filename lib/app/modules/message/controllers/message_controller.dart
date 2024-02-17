@@ -1,23 +1,37 @@
+import 'package:deep_dive_get_cli/app/data/model/message_model.dart';
 import 'package:get/get.dart';
 
 class MessageController extends GetxController {
-  //TODO: Implement MessageController
+  List<MessageModel> messageModel = [];
 
-  final count = 0.obs;
   @override
   void onInit() {
+    loadMessageModel();
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void loadMessageModel() {
+    messageModel = [
+      MessageModel(
+        profileImage: 'foto_profile',
+        username: 'ardhncalwaa',
+        description: 'Sent a reel by kabulastugan',
+        isActive: false,
+        time: '1h',
+      ),
+      MessageModel(
+        profileImage: 'azziz_profile',
+        username: 'azzlhrr',
+        description: ' ',
+        isActive: true,
+        time: '4h',
+      ),
+      MessageModel(
+          profileImage: 'rapli_profile',
+          username: 'rapliii121',
+          description: '4 new messages',
+          isActive: false,
+          time: '2d'),
+    ];
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

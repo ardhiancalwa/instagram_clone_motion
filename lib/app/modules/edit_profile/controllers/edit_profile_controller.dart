@@ -9,6 +9,8 @@ import '../../../routes/app_pages.dart';
 class EditProfileController extends GetxController
     with GetTickerProviderStateMixin {
   final highlightStoryController = StoryController();
+  var isDark = false.obs;
+  void changeTheme() => isDark.value = !isDark.value;
 
   @override
   void onInit() {
@@ -31,9 +33,7 @@ class EditProfileController extends GetxController
     hashtag: '#hastag',
   );
 
-  void toHomeView() {
-    Get.back();
-  }
+
 
   List<StoryModel> highlightStoryModel = [];
 

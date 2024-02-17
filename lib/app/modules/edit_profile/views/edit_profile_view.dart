@@ -1,4 +1,5 @@
 import 'package:deep_dive_get_cli/app/modules/grid_post/views/grid_post_view.dart';
+import 'package:deep_dive_get_cli/app/shared/widgets/bottomAppBar.dart';
 import 'package:deep_dive_get_cli/app/shared/widgets/user_info.dart';
 import 'package:deep_dive_get_cli/app/shared/widgets/user_profile_data.dart';
 import 'package:flutter/material.dart';
@@ -16,132 +17,92 @@ class EditProfileView extends GetView<EditProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Row(
-          children: [
-            Text(
-              controller.userProfile.nameAccount,
-              style: const TextStyle(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(
-              width: 6,
-            ),
-            Container(
-              width: 28,
-              height: 18,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.red,
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Row(
+            children: [
+              Text(
+                controller.userProfile.nameAccount,
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
-              padding: const EdgeInsets.all(2),
-              child: const Center(
-                child: Text(
-                  '10+',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.white,
+              const SizedBox(
+                width: 6,
+              ),
+              Container(
+                width: 28,
+                height: 18,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.red,
+                ),
+                padding: const EdgeInsets.all(2),
+                child: const Center(
+                  child: Text(
+                    '10+',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-              ),
-            )
-          ],
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.add_box_outlined),
+              )
+            ],
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.add_box_outlined),
+            ),
+            IconButton(
+              onPressed: () => controller.changeTheme(),
+              icon: const Icon(Icons.dark_mode_outlined),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.menu),
+            ),
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              UserProfile(userProfile: controller.userProfile),
+              UserInfo(userProfile: controller.userProfile),
+              Container(
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                ),
+                height: 97.75,
+                child: ListView.builder(
+                  itemCount: controller.highlightStoryModel.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    StoryModel data2 = controller.highlightStoryModel[index];
+                    return Padding(
+                      padding: const EdgeInsets.only(
+                        right: 12,
+                      ),
+                      child: HighlightStory(
+                        highlightStory: data2,
+                        onTap: () {
+                          controller.toStoryPageView(data2.storyItems);
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 500,
+                width: double.infinity,
+                child: Expanded(
+                  flex: 1,
+                  child: GridPostView(),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            UserProfile(userProfile: controller.userProfile),
-            UserInfo(userProfile: controller.userProfile),
-            Container(
-              margin: const EdgeInsets.symmetric(
-                horizontal: 16,
-              ),
-              height: 97.75,
-              child: ListView.builder(
-                itemCount: controller.highlightStoryModel.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  StoryModel data2 = controller.highlightStoryModel[index];
-                  return Padding(
-                    padding: const EdgeInsets.only(
-                      right: 12,
-                    ),
-                    child: HighlightStory(
-                      highlightStory: data2,
-                      onTap: () {
-                        controller.toStoryPageView(data2.storyItems);
-                      },
-                    ),
-                  );
-                },
-              ),
-            ),
-            SizedBox(
-              height: 500,
-              width: double.infinity,
-              child: Expanded(
-                child: GridPostView(),
-              ),
-            ),
-          ],
         ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        height: 60,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            IconButton(
-              onPressed: () => controller.toHomeView(),
-              icon: const Icon(
-                Icons.home_outlined,
-                size: 24,
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.search,
-                size: 24,
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.video_collection_outlined,
-                size: 24,
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.shopping_bag_outlined,
-                size: 24,
-              ),
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: const CircleAvatar(
-                radius: 12,
-                backgroundImage:
-                    AssetImage("assets/images/profile/foto_profile.jpg"),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+        bottomNavigationBar: const Bottom());
   }
 }

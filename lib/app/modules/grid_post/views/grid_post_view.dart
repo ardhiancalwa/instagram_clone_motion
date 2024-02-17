@@ -36,9 +36,14 @@ class GridPostView extends GetView<GridPostController> {
               ),
               itemCount: _tabx.postMap.length,
               itemBuilder: (_, index) {
-                return Image.asset(
-                  "${_tabx.postMap.elementAt(index)['image']}",
-                  fit: BoxFit.cover,
+                return InkWell(
+                  onTap: () {
+                    print("berhasil");
+                  },
+                  child: Image.asset(
+                    "${_tabx.postMap.elementAt(index)['image']}",
+                    fit: BoxFit.cover,
+                  ),
                 );
               },
             ),
@@ -52,9 +57,12 @@ class GridPostView extends GetView<GridPostController> {
               ),
               itemCount: _tabx.reelsMap.length,
               itemBuilder: (_, index) {
-                return Image.network(
-                  "${_tabx.reelsMap.elementAt(index)['images']}",
-                  fit: BoxFit.cover,
+                return InkWell(
+                  onTap: () {},
+                  child: Image.network(
+                    "${_tabx.reelsMap.elementAt(index)['images']}",
+                    fit: BoxFit.cover,
+                  ),
                 );
               },
             ),
@@ -67,9 +75,12 @@ class GridPostView extends GetView<GridPostController> {
               ),
               itemCount: _tabx.postMap.length,
               itemBuilder: (_, index) {
-                return Image.asset(
-                  "${_tabx.postMap.elementAt(index)['image']}",
-                  fit: BoxFit.cover,
+                return InkWell(
+                  onTap: () {},
+                  child: Image.asset(
+                    "${_tabx.postMap.elementAt(index)['image']}",
+                    fit: BoxFit.cover,
+                  ),
                 );
               },
             ),

@@ -44,7 +44,8 @@ class MyNotification extends StatelessWidget {
       ),
       trailing: notificationModel.isFollow
           ? SizedBox(
-              width: 100,
+              width: 95,
+              height: 35,
               child: ElevatedButton(
                 style: ButtonStyle(
                   backgroundColor:
@@ -60,6 +61,7 @@ class MyNotification extends StatelessWidget {
                   "Follow",
                   style: TextStyle(
                     color: Colors.white,
+                    fontSize: 15,
                   ),
                 ),
               ),

@@ -115,7 +115,7 @@ class UserInfo extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  child: Container(
+                  child: SizedBox(
                     height: 30,
                     child: ElevatedButton(
                       style: ButtonStyle(

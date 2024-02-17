@@ -11,8 +11,6 @@ import '../../../routes/app_pages.dart';
 class HomeController extends GetxController {
   final storyController = StoryController();
   final messageController = MessageController();
-  var isDark = false.obs;
-  void changeTheme() => isDark.value = !isDark.value;
 
   PostModel postModel = PostModel(
     namaAkun: 'raplii._',
@@ -175,5 +173,9 @@ class HomeController extends GetxController {
 
   void toMessageView() {
     Get.toNamed(Routes.MESSAGE);
+  }
+
+  void toHomeView() {
+    Get.back();
   }
 }
